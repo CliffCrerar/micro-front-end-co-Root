@@ -2,10 +2,10 @@ language: node_js
 node_js:
   - node
 script:
-  - npm build
+  - npm run build
   - echo "Commit sha - $TRAVIS_COMMIT"
-  - mkdir -p dist/micro-front-end-co/root-config/$TRAVIS_COMMIT
-  - mv dist/*.* dist/micro-front-end-co/root-config/$TRAVIS_COMMIT/
+  - mkdir -p dist/@micro-front-end-co/root-config/$TRAVIS_COMMIT
+  - mv dist/*.* dist/@micro-front-end-co/root-config/$TRAVIS_COMMIT/
 deploy:
   provider: s3
   access_key_id: "$AWS_ACCESS_KEY_ID"
